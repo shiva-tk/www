@@ -3,9 +3,12 @@
 *.log
 tmp/
 
-/target
-**/*.rs.bk
-Cargo.lock
-bin/
-pkg/
-wasm-pack.log
+*.tern-port
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+.npm
+.eslintcache
+dist/

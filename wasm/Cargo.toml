@@ -1,8 +1,8 @@
 [package]
-name = "www-frontend"
+name = "www-wasm"
 version = "0.1.0"
 authors = ["Shiva Tamil Kumaran <shivatk01@gmail.com>"]
-description = "Frontend for my personal website"
+description = "WASM library for my personal website"
 repository = "https://github.com/shiva-tk/www"
 edition = "2021"
 
