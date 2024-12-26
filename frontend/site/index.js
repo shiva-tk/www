@@ -1,64 +1,69 @@
-import * as wasm from "www-frontend";
+import * as wasm from 'www-frontend';
 
-const terminal = document.getElementById('terminal');
+class Terminal {
+  constructor() {
+    this.terminal = document.getElementById('terminal');
+  }
 
-function getTerminalWidthInCharacters(terminalElement) {
-  // Get the width of the terminal in pixels
-  const terminalWidth = terminalElement.offsetWidth;
+  get widthPixels() {
+    return this.terminal.offsetWidth
+  }
 
-  // Create a temporary span with a single character
-  const testSpan = document.createElement('span');
-  testSpan.textContent = 'W'; // Use a wide character to ensure accuracy
-  testSpan.style.fontFamily = getComputedStyle(terminalElement).fontFamily;
-  testSpan.style.fontSize = getComputedStyle(terminalElement).fontSize;
-  testSpan.style.visibility = 'hidden'; // Make it invisible
-  document.body.appendChild(testSpan);
+  get widthCharacters() {
+    // Create a temporary span with a single character
+    const testSpan = document.createElement('span');
+    testSpan.textContent = 'W'; // Use a wide character to ensure accuracy
+    testSpan.style.fontFamily = getComputedStyle(this.terminal).fontFamily;
+    testSpan.style.fontSize = getComputedStyle(this.terminal).fontSize;
+    testSpan.style.visibility = 'hidden'; // Make it invisible
+    document.body.appendChild(testSpan);
 
-  // Get the width of the single character in pixels
-  const charWidth = testSpan.offsetWidth;
+    // Get the width of the single character in pixels
+    const widthCharacters = testSpan.offsetWidth;
 
-  // Remove the test span
-  document.body.removeChild(testSpan);
+    // Remove the test span
+    document.body.removeChild(testSpan);
 
-  // Calculate and return the terminal width in characters
-  return Math.floor(terminalWidth / charWidth) - 1;
-}
+    // Calculate and return the terminal width in characters
+    return Math.floor(this.widthPixels / widthCharacters);
+  }
 
-function getTerminalHeightInCharacters(terminalElement) {
-  // Get the height of the terminal in pixels
-  const terminalHeight = terminalElement.offsetHeight;
+  get heightPixels() {
+    return this.terminal.offsetHeight;
+  }
 
-  // Create a temporary span with a single line of text
-  const testSpan = document.createElement('span');
-  testSpan.textContent = 'W'; // A single character to measure line height
-  testSpan.style.fontFamily = getComputedStyle(terminalElement).fontFamily;
-  testSpan.style.fontSize = getComputedStyle(terminalElement).fontSize;
-  testSpan.style.visibility = 'hidden'; // Make it invisible
+  get heightCharacters() {
+    // Create a temporary span with a single line of text
+    const testSpan = document.createElement('span');
+    testSpan.textContent = 'W'; // A single character to measure line height
+    testSpan.style.fontFamily = getComputedStyle(this.terminal).fontFamily;
+    testSpan.style.fontSize = getComputedStyle(this.terminal).fontSize;
+    testSpan.style.visibility = 'hidden'; // Make it invisible
 
-  document.body.appendChild(testSpan);
+    document.body.appendChild(testSpan);
 
-  let height = 0;
+    // Get the line height of the character in pixels
+    const heightCharacters = testSpan.offsetHeight;
 
-  // Get the line height of the character in pixels
-  const charHeight = testSpan.offsetHeight;
+    // Remove the test span
+    document.body.removeChild(testSpan);
 
-  // Remove the test span
-  document.body.removeChild(testSpan);
+    // Calculate and return the terminal height in characters
+    return Math.floor(this.heightPixels / heightCharacters);
+  }
 
-  // Calculate and return the terminal height in characters
-  return Math.floor(terminalHeight / charHeight) - 1;
-}
-
-// Function to append text to the terminal
-function writeToTerminal(text) {
-    // Create a span element for the text
+  printLine(line) {
     const span = document.createElement('span');
-    span.innerHTML = text; // Allow HTML for bold characters
+    span.innerHTML = line; // Allow HTML for bold characters
     terminal.appendChild(span);
+  }
 }
 
-const terminalWidth = getTerminalWidthInCharacters(terminal);
-const terminalHeight = getTerminalHeightInCharacters(terminal);
-for (let i = 0; i < terminalHeight; i++) {
-  writeToTerminal('<b>I</b>'.repeat(terminalWidth / 2) + 'I'.repeat(terminalWidth / 2));
+const t = new Terminal();
+const w = t.widthCharacters;
+const h = t.heightCharacters;
+
+for (let i = 0; i < h; i++) {
+  const l = "<b>I</b>".repeat(w);
+  t.printLine(l);
 }
