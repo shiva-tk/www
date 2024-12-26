@@ -1,0 +1,44 @@
+/* Reset body margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e45649;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Terminal div */
+#terminal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100vw; /* Exactly the width of the viewport */
+    height: 100vh; /* Exactly the height of the viewport */
+    background-color: #fafafa; /* Terminal-like background */
+    color: #383a42; /* Terminal-like text color */
+    font-family: "Iosevka", monospace; /* Monospaced font */
+    font-size: 16px; /* Adjust as needed */
+    line-height: 1.5; /* Adjust for spacing */
+    overflow: hidden; /* Prevent scrolling */
+    box-sizing: border-box; /* Ensure padding doesn’t add to width */
+}
+
+/* Content below the terminal */
+#content {
+    padding: 20px;
+    background-color: #fafafa;
+    color: #383a42;
+    font-family: "Iosevka", monospace;
+    width: 100%; /* Prevent the content from exceeding the viewport width */
+    box-sizing: border-box; /* Include padding in the width */
+}
