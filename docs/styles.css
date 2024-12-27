@@ -38,7 +38,7 @@ a.inline {
     background-color: #000000; /* Terminal-like background */
     color: #ffffff; /* Terminal-like text color */
     font-family: "Iosevka", monospace; /* Monospaced font */
-    font-size: 16px; /* Adjust as needed */
+    font-size: 10px; /* Adjust as needed */
     line-height: 1.5; /* Adjust for spacing */
     overflow: hidden; /* Prevent scrolling */
     box-sizing: border-box; /* Ensure padding doesn’t add to width */
