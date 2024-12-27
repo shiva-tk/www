@@ -37,7 +37,7 @@ a.inline {
     height: 75vh; /* Exactly the height of the viewport */
     background-color: #000000; /* Terminal-like background */
     color: #ffffff; /* Terminal-like text color */
-    font-family: "Iosevka", monospace; /* Monospaced font */
+    font-family: "Iosevka Web", monospace; /* Monospaced font */
     font-size: 10px; /* Adjust as needed */
     line-height: 1.5; /* Adjust for spacing */
     overflow: hidden; /* Prevent scrolling */
@@ -49,7 +49,7 @@ a.inline {
     padding: 20px;
     background-color: #000000;
     color: #ffffff;
-    font-family: "Iosevka", monospace;
+    font-family: "Iosevka Web", monospace;
     width: 100%; /* Prevent the content from exceeding the viewport width */
     max-width: 800px;
     box-sizing: border-box; /* Include padding in the width */
