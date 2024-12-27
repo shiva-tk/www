@@ -29,10 +29,7 @@ a.inline {
 
 /* Terminal div */
 #terminal {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: block; /* Ensure block-level behavior */
     width: 100vw; /* Exactly the width of the viewport */
     height: 75vh; /* Exactly the height of the viewport */
     background-color: #000000; /* Terminal-like background */
@@ -42,6 +39,7 @@ a.inline {
     line-height: 1.5; /* Adjust for spacing */
     overflow: hidden; /* Prevent scrolling */
     box-sizing: border-box; /* Ensure padding doesn’t add to width */
+    white-space: pre; /* Preserve newlines and spaces exactly */
 }
 
 /* Content below the terminal */

@@ -60,7 +60,6 @@ pub fn perlin_animation(terminal_id: &str, width_chars: u32, height_chars: u32) 
             result.push('\n');
         }
 
-        terminal.set_text_content(Some(""));
         terminal.set_text_content(Some(&result));
 
         request_animation_frame(f.borrow().as_ref().unwrap());

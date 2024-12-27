@@ -3,7 +3,13 @@ import { Terminal } from '../components/terminal.js'
 
 const TERMINAL_ID = 'terminal';
 
-const terminal = Terminal.fromId(TERMINAL_ID);
-console.log(terminal);
+async function runAnimation() {
+  // Wait for necessary fonts to load, before calling out to WASM.
+  await document.fonts.load('10px "Iosevka Web"');
 
-wasm.perlin_animation(TERMINAL_ID, terminal.widthCharacters, terminal.heightCharacters);
+  // Run the animation.
+  const terminal = Terminal.fromId(TERMINAL_ID);
+  wasm.perlin_animation(TERMINAL_ID, terminal.widthCharacters, terminal.heightCharacters);
+}
+
+runAnimation();
