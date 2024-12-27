@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shiva t.k...</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id="content">
+        <h1>shiva t.k...</h1>
+        <a href="./index.html">[home.]</a>
+        <a href="./about.html">[about.]</a>
+        <a class="selected" href="./projects.html">[projects.]</a>
+
+        <h2>Personal Website.</h2>
+        The animation on the homepage isn't a GIF! Every frame is actually rendered live, and written as text directly
+        to the page. I've always found ASCII art really cool, so this was a fun little project.
+        The logic to compute the Perlin noise and render it into ASCII is written in Rust, and compiled into WASM.
+        I haven't worked with WASM before, and so this was a fun experiment! Getting it to run at a high enough frame-rate was an interesting challenge.
+        You can check out the source code <a href="https://github.com/shiva-tk/www" class="inline">here</a>.
+
+        <h2>RAFT Consensus.</h2>
+        As part of a module at university, I built an implementation of the
+        <a href="https://raft.github.io/" class="inline">RAFT</a> distributed consensus algorithm, in Elixir.
+        Working with Elixir was fun, and trying to reason about the correctness of a distributed algorithm was interesting.
+
+        <h2>WACC Compiler.</h2>
+        As part of my compiler's course, I built a compiler for <b>WACC</b>, a while-like
+        imperative language. I worked with
+        <a href="https://en.wikipedia.org/wiki/Parser_combinator" class="inline">parser-combinators</a>, which I
+        really enjoyed. Programming in Scala was really fun too.
+    </div>
+  </body>
+</html>
