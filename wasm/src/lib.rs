@@ -51,8 +51,8 @@ pub fn perlin_animation(terminal_id: &str, width_chars: u32, height_chars: u32) 
 
         for i in 0..height_chars {
             for j in 0..width_chars {
-                let x = (i as f64 / height_chars as f64) * 5.0;
-                let y = (j as f64 / width_chars as f64) * 5.0;
+                let x = (i as f64 / width_chars as f64) * 7.0;
+                let y = (j as f64 / width_chars as f64) * 7.0;
                 let brightness = perlin.noise(&vec3d(x, y, elapsed / 1500.0));
 
                 result.push(ascii::from_brightness(brightness));
