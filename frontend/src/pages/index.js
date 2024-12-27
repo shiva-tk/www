@@ -1,13 +1,9 @@
 import * as wasm from 'www-wasm';
 import { Terminal } from '../components/terminal.js'
 
-const t = Terminal.fromId('terminal');
-const w = t.widthCharacters;
-const h = t.heightCharacters;
+const TERMINAL_ID = 'terminal';
 
-for (let i = 0; i < h; i++) {
-  const l = "<b>I</b>".repeat(w);
-  t.printLine(l);
-}
+const terminal = Terminal.fromId(TERMINAL_ID);
+console.log(terminal);
 
-wasm.greet("WebAssembly with npm");
+wasm.perlin_animation(TERMINAL_ID, terminal.widthCharacters, terminal.heightCharacters);

@@ -24,8 +24,8 @@ a:hover {
     align-items: flex-start;
     width: 100vw; /* Exactly the width of the viewport */
     height: 100vh; /* Exactly the height of the viewport */
-    background-color: #fafafa; /* Terminal-like background */
-    color: #383a42; /* Terminal-like text color */
+    background-color: #000000; /* Terminal-like background */
+    color: #ffffff; /* Terminal-like text color */
     font-family: "Iosevka", monospace; /* Monospaced font */
     font-size: 16px; /* Adjust as needed */
     line-height: 1.5; /* Adjust for spacing */

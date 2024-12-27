@@ -56,9 +56,11 @@ export class Terminal {
     return Math.floor(this.heightPixels / heightCharacters);
   }
 
-  printLine(line) {
-    const span = document.createElement('span');
-    span.innerHTML = line; // Allow HTML for bold characters
-    this.terminalElement.appendChild(span);
+  print(text) {
+    this.terminalElement.textContent = text;
+  }
+
+  clear() {
+    this.terminalElement.textContent = '';
   }
 }
