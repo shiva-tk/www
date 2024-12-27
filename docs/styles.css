@@ -5,6 +5,9 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    height: 100vh; /* Set body height to viewport height */
 }
 
 a {
@@ -28,9 +31,8 @@ a.inline {
 
 /* Terminal div */
 #terminal {
-    display: block; /* Ensure block-level behavior */
-    width: 100vw; /* Exactly the width of the viewport */
-    height: 75vh; /* Exactly the height of the viewport */
+    flex: 1; /* Take up as much space as possible */
+    width: 100vh
     background-color: #000000; /* Terminal-like background */
     color: #ffffff; /* Terminal-like text color */
     font-family: "Iosevka Web", monospace; /* Monospaced font */
