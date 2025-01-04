@@ -16,7 +16,7 @@ a {
 }
 
 a:hover {
-    color: #e45649;
+    color: #f7d1a3;
     text-decoration: underline;
     font-weight: bold;
 }
@@ -41,6 +41,10 @@ a.inline {
     overflow: hidden; /* Prevent scrolling */
     box-sizing: border-box; /* Ensure padding doesn’t add to width */
     white-space: pre; /* Preserve newlines and spaces exactly */
+    text-shadow: 0 0 5px #f7d1a3, /* Main warm orangy glow */
+                 0 0 10px #f7d1a3,
+                 0 0 20px #f4a261, /* Stronger inner orange glow */
+                 0 0 40px #e76f51; /* Deep orange-red for outer glow */
 }
 
 /* Content below the terminal */
