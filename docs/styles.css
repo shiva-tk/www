@@ -40,7 +40,7 @@ a.inline {
     background-color: #0c0f14;
     color:#e8f1fa;
     font-family: "Iosevka Web", monospace; /* Monospaced font */
-    font-size: 10px; /* Adjust as needed */
+    font-size: 12px; /* Adjust as needed */
     line-height: 1.5; /* Adjust for spacing */
     overflow: hidden; /* Prevent scrolling */
     box-sizing: border-box; /* Ensure padding doesn’t add to width */
