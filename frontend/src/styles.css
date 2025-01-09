@@ -1,6 +1,6 @@
 /* Reset body margin and padding */
 body {
-    background-color: #0c0f14;
+    background-color: #fafafa;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,54 +8,74 @@ body {
     display: flex; /* Enable flexbox layout */
     flex-direction: column; /* Stack children vertically */
     height: 100vh; /* Set body height to viewport height */
+    align-items: center;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+    color: #8a3b3c;
+    text-decoration: underline;
 }
 
 a:hover {
     text-decoration: underline;
     font-weight: bold;
-    color:#e8f1fa;
-    text-shadow: 0 0 1px #a6d0ff, /* Main subtle glow */
-                 0 0 3px #c4e1ff, /* Slightly brighter outer glow */
-                 0 0 7px #8fb9e3, /* Faint blue for depth */
-                 0 0 12px #ad8ce2;
+    color:#e45649;
 }
 
 a.selected {
+    text-decoration: none;
     font-weight: bold;
 }
 
-a.inline {
-    text-decoration: underline;
+a.menu {
+    text-decoration: none;
+}
+ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    position: relative; /* Enable positioning for pseudo-element */
+    padding-left: 40px; /* Space for the custom bullet */
+    padding-top: 7px;
+}
+
+li::before {
+    content: ">"; /* Use > as the bullet symbol */
+    position: absolute; /* Position it to the left of the text */
+    left: 0; /* Align to the left padding */
+    color: #e45649; /* Customize color if desired */
+    font-weight: bold;
+}
+
+hr {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* Terminal div */
 #terminal {
     flex: 1; /* Take up as much space as possible */
-    width: 100vh
-    background-color: #0c0f14;
-    color:#e8f1fa;
+    width: 100%;
+    max-width: 800px;
+    background-color: #fafafa;
+    color:#383a42;
+    font-weight: bold;
     font-family: "Iosevka Web", monospace; /* Monospaced font */
     font-size: 12px; /* Adjust as needed */
     line-height: 1.5; /* Adjust for spacing */
     overflow: hidden; /* Prevent scrolling */
     box-sizing: border-box; /* Ensure padding doesn’t add to width */
     white-space: pre; /* Preserve newlines and spaces exactly */
-    text-shadow: 0 0 5px #a6d0ff, /* Main subtle glow */
-                 0 0 15px #c4e1ff, /* Slightly brighter outer glow */
-                 0 0 30px #8fb9e3, /* Faint blue for depth */
-                 0 0 50px #ad8ce2;
 }
 
 /* Content below the terminal */
 #content {
     padding: 20px;
-    background-color: #0c0f14;
-    color: #ffffff;
+    background-color: #fafafa;
+    color: #383a42;
     font-family: "Iosevka Web", monospace;
     width: 100%; /* Prevent the content from exceeding the viewport width */
     max-width: 800px;
