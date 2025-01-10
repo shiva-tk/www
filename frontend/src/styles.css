@@ -64,7 +64,7 @@ hr {
     color:#383a42;
     font-weight: bold;
     font-family: "Iosevka Web", monospace; /* Monospaced font */
-    font-size: 12px; /* Adjust as needed */
+    font-size: 10px; /* Adjust as needed */
     line-height: 1.5; /* Adjust for spacing */
     overflow: hidden; /* Prevent scrolling */
     box-sizing: border-box; /* Ensure padding doesn’t add to width */
