@@ -53,6 +53,7 @@ li::before {
 hr {
     margin-bottom: 20px;
     margin-top: 20px;
+    color: #c6c7c7;
 }
 
 /* Terminal div */
