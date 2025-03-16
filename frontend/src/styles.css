@@ -82,3 +82,16 @@ hr {
     max-width: 800px;
     box-sizing: border-box; /* Include padding in the width */
 }
+
+.pinterest-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text */
+}
+
+.pinterest-container em {
+    margin-bottom: 10px; /* Add spacing below the widget */
+    font-style: italic; /* Keeps the emphasis */
+    color: #c6c7c7; /* Optional: Slightly muted color */
+}

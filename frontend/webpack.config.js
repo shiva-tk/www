@@ -26,6 +26,11 @@ module.exports = {
       filename: 'about.html',
       chunks: []
     }),
+    new HtmlWebpackPlugin({
+      template: './src/inspo.html', // Template for the index page
+      filename: 'inspo.html',
+      chunks: []
+    }),
     new CopyPlugin({
       patterns: [
         { from: 'src/styles.css', to: 'styles.css' }, // Copy style.css to dist/styles.css
