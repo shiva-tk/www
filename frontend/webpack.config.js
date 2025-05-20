@@ -27,8 +27,8 @@ module.exports = {
       chunks: []
     }),
     new HtmlWebpackPlugin({
-      template: './src/inspo.html', // Template for the index page
-      filename: 'inspo.html',
+      template: './src/img.html', // Template for the index page
+      filename: 'img.html',
       chunks: []
     }),
     new CopyPlugin({
