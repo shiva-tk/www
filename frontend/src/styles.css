@@ -1,16 +1,19 @@
-/* Reset body margin and padding */
-body {
-    background-color: #fafafa;
+html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    display: flex; /* Enable flexbox layout */
-    flex-direction: column; /* Stack children vertically */
-    height: 100vh; /* Set body height to viewport height */
-    align-items: center;
+    overflow-x: hidden;
 }
 
+body {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Iosevka Web", monospace;
+}
+
+/* Links */
 a {
     color: #8a3b3c;
     text-decoration: underline;
@@ -19,7 +22,7 @@ a {
 a:hover {
     text-decoration: underline;
     font-weight: bold;
-    color:#e45649;
+    color: #e45649;
 }
 
 a.selected {
@@ -30,68 +33,86 @@ a.selected {
 a.menu {
     text-decoration: none;
 }
+
+/* Lists */
 ul {
-    list-style: none; /* Remove default bullet points */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 li {
-    position: relative; /* Enable positioning for pseudo-element */
-    padding-left: 40px; /* Space for the custom bullet */
+    position: relative;
+    padding-left: 40px;
     padding-top: 7px;
 }
 
 li::before {
-    content: ">"; /* Use > as the bullet symbol */
-    position: absolute; /* Position it to the left of the text */
-    left: 0; /* Align to the left padding */
-    color: #e45649; /* Customize color if desired */
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #e45649;
     font-weight: bold;
 }
 
 hr {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px 0;
     color: #c6c7c7;
 }
 
-/* Terminal div */
-#terminal {
-    flex: 1; /* Take up as much space as possible */
+/* Hero Section */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* pushes header to bottom */
+    height: 100vh; /* full viewport height */
     width: 100%;
     max-width: 800px;
+    box-sizing: border-box;
     background-color: #fafafa;
-    color:#383a42;
-    font-weight: bold;
-    font-family: "Iosevka Web", monospace; /* Monospaced font */
-    font-size: 10px; /* Adjust as needed */
-    line-height: 1.5; /* Adjust for spacing */
-    overflow: hidden; /* Prevent scrolling */
-    box-sizing: border-box; /* Ensure padding doesn’t add to width */
-    white-space: pre; /* Preserve newlines and spaces exactly */
 }
 
-/* Content below the terminal */
+/* Terminal div inside hero */
+#terminal {
+    flex: 1; /* fills available space above header */
+    background-color: #fafafa;
+    color: #383a42;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow: hidden;
+    white-space: pre;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* optional: vertically center content */
+    box-sizing: border-box;
+}
+
+/* Header inside hero */
+#header {
+  padding: 20px;
+  background-color: #fafafa;
+  color: #383a42;
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+
+  display: flex;                  /* enable flexbox */
+  justify-content: space-between; /* push left & right */
+  align-items: center;            /* vertically align them */
+}
+
+#header h1 {
+    margin: 0;
+}
+
+/* === CONTENT SECTION === */
 #content {
     padding: 20px;
     background-color: #fafafa;
     color: #383a42;
-    font:14px/1.5 "Iosevka Web", monospace;
-    width: 100%; /* Prevent the content from exceeding the viewport width */
+    font: 14px/1.5 "Iosevka Web", monospace;
+    width: 100%;
     max-width: 800px;
-    box-sizing: border-box; /* Include padding in the width */
-}
-
-.pinterest-container {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center horizontally */
-    text-align: center; /* Center text */
-}
-
-.pinterest-container em {
-    margin-bottom: 10px; /* Add spacing below the widget */
-    font-style: italic; /* Keeps the emphasis */
-    color: #c6c7c7; /* Optional: Slightly muted color */
+    box-sizing: border-box;
 }

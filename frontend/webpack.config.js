@@ -21,11 +21,6 @@ module.exports = {
       filename: 'index.html',
       chunks: ['main'], // Only include 'main.js' for the index page
     }),
-    new HtmlWebpackPlugin({
-      template: './src/about.html', // Template for the index page
-      filename: 'about.html',
-      chunks: []
-    }),
     new CopyPlugin({
       patterns: [
         { from: 'src/styles.css', to: 'styles.css' }, // Copy style.css to dist/styles.css
