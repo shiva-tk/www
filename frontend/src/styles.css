@@ -99,7 +99,7 @@ hr {
 
 /* Page Content */
 #content {
-    padding: 20px;
     max-width: 680px;
     width: 85%;
+    padding-bottom: 30px;
 }
