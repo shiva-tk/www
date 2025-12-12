@@ -10,66 +10,60 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Iosevka Web", monospace;
+    font-family: "Libertinus Serif";
+    font-size: 16px;
+    line-height: 1.5;
+    color: #383a42;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Libertinus Sans";
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    font-weight: 600;
+}
+
+/* Improve spacing between paragraphs explicitly */
+p {
+    margin: 1em 0;
+}
+
+/* Lists (fix condensed bullet points) */
+ul, ol {
+    margin: 1.2em 0;
+    padding-left: 1.6em;
+}
+
+li {
+    margin: 0.4em 0; /* THIS is the key fix */
 }
 
 /* Links */
 a {
-    color: #8a3b3c;
+    color: #8E4585;
     text-decoration: underline;
 }
 
 a:hover {
-    text-decoration: underline;
-    font-weight: bold;
-    color: #e45649;
-}
-
-a.selected {
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a.menu {
-    text-decoration: none;
-}
-
-/* Lists */
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    position: relative;
-    padding-left: 40px;
-    padding-top: 7px;
-}
-
-li::before {
-    content: ">";
-    position: absolute;
-    left: 0;
-    color: #e45649;
-    font-weight: bold;
+    text-decoration-thickness: 2px;
 }
 
 hr {
-    margin: 20px 0;
-    color: #c6c7c7;
+    margin: 32px 0;
+    border: none;
+    border-top: 1px solid #c6c7c7;
 }
 
 /* Hero Section */
 #hero {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* pushes header to bottom */
-    height: 100vh; /* full viewport height */
+    justify-content: space-between;
+    height: 100vh;
     width: 100%;
     max-width: 800px;
-    box-sizing: border-box;
-    background-color: #fafafa;
+    align-items: center;
 }
 
 /* Terminal div inside hero */
@@ -86,33 +80,26 @@ hr {
     justify-content: center;
     align-items: center; /* optional: vertically center content */
     box-sizing: border-box;
+    font-family: "Iosevka Web", monospace
 }
 
-/* Header inside hero */
+/* Header */
 #header {
-  padding: 20px;
-  background-color: #fafafa;
-  color: #383a42;
-  font-size: 14px;
-  line-height: 1.5;
-  box-sizing: border-box;
-
-  display: flex;                  /* enable flexbox */
-  justify-content: space-between; /* push left & right */
-  align-items: center;            /* vertically align them */
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    width: 85%;
 }
 
 #header h1 {
     margin: 0;
 }
 
-/* === CONTENT SECTION === */
+/* Page Content */
 #content {
     padding: 20px;
-    background-color: #fafafa;
-    color: #383a42;
-    font: 14px/1.5 "Iosevka Web", monospace;
-    width: 100%;
-    max-width: 800px;
-    box-sizing: border-box;
+    max-width: 680px;
+    width: 85%;
 }
