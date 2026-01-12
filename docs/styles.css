@@ -1,10 +1,10 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
+details > summary {
+    list-style-type: '⊢ ️';
 }
 
+details[open] > summary {
+    list-style-type: '⊤ ';
+}
 body {
     background-color: #fafafa;
     display: flex;
@@ -80,7 +80,7 @@ hr {
     justify-content: center;
     align-items: center; /* optional: vertically center content */
     box-sizing: border-box;
-    font-family: "Iosevka Web", monospace
+    font-family: "Inconsolata", monospace
 }
 
 /* Header */
@@ -102,4 +102,24 @@ hr {
     max-width: 680px;
     width: 85%;
     padding-bottom: 30px;
+}
+
+summary {
+    font-family: "Libertinus Sans";
+    font-weight: bold;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+details > summary {
+    list-style-type: '⊢ ';
+}
+
+details[open] > summary {
+    list-style-type: '⊤ ';
+}
+
+.code {
+    font-family: "Inconsolata";
 }
