@@ -138,3 +138,34 @@ blockquote cite {
   font-size: 0.9em;
   font-family: "Libertinus Sans";
 }
+
+figure {
+    margin: 2.5em 0;
+}
+
+figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 0.6em;
+    font-size: 0.9em;
+    color: #555;
+    font-family: "Libertinus Sans";
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 2em 0;
+    align-items: center;
+}
+
+.gallery-grid img {
+    width: 100%;
+}
