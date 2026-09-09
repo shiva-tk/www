@@ -5,13 +5,23 @@ details > summary {
 details[open] > summary {
     list-style-type: '⊤ ';
 }
+html {
+    /* Stop iOS Safari from inflating body text (and only body text) when the
+       viewport widens on rotation, which skews the sans/serif size ratio. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Fixed root so the rem-based headings below stay in a constant ratio to
+       the body text regardless of the browser's default font size. */
+    font-size: 16px;
+}
+
 body {
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
     color: black;
 }
@@ -115,8 +125,16 @@ hr {
 
 #header h1 {
     margin: 0;
-    font-size: clamp(1.7rem, 3.3vw, 2.2rem);
+    font-size: 2.1rem;
     font-weight: 400;
+}
+
+/* On the narrowest phones the title and the [...] link no longer fit on one
+   line at 2.1rem, so step it down rather than let the header wrap. */
+@media (max-width: 420px) {
+    #header h1 {
+        font-size: 1.7rem;
+    }
 }
 
 /* Page Content */
