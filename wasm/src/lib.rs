@@ -31,8 +31,29 @@ fn request_animation_frame(f: &Closure<dyn FnMut()>) {
         .expect("should register `requestAnimationFrame` OK");
 }
 
+/// Renders the animated Perlin field into `terminal_id` as an ASCII grid.
+///
+/// `x_step`/`y_step` are how far to advance through the noise per row and per
+/// column. The caller derives them from the character cell's pixel size, so a
+/// given distance on screen covers the same distance in the field whichever
+/// way it runs, and the gradients stay smooth and undistorted at any banner
+/// size.
+///
+/// Both earlier versions got this wrong in the same way — they tied the step
+/// to the grid's extent rather than to its pixel size, so the field was
+/// stretched to fit the box. Dividing both axes by `width_chars` squashed a
+/// wide banner into horizontal streaks; normalising each axis against its own
+/// extent fixed the streaking but left the vertical sampled ~2.4x coarser
+/// than the horizontal, because a character cell is about twice as tall as it
+/// is wide.
 #[wasm_bindgen]
-pub fn perlin_animation(terminal_id: &str, width_chars: u32, height_chars: u32) {
+pub fn perlin_animation(
+    terminal_id: &str,
+    width_chars: u32,
+    height_chars: u32,
+    x_step: f64,
+    y_step: f64,
+) {
     let terminal = terminal(terminal_id);
 
     let start_time = window().performance().unwrap().now();
@@ -51,8 +72,8 @@ pub fn perlin_animation(terminal_id: &str, width_chars: u32, height_chars: u32) 
 
         for i in 0..height_chars {
             for j in 0..width_chars {
-                let x = (i as f64 / width_chars as f64) * 7.0;
-                let y = (j as f64 / width_chars as f64) * 7.0;
+                let x = i as f64 * x_step;
+                let y = j as f64 * y_step;
                 let brightness = perlin.noise(&vec3d(x, y, elapsed / 1500.0));
 
                 result.push(ascii::from_brightness(brightness));

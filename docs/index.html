@@ -6,58 +6,86 @@
     <title>Shiva Tamil Kumaran</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
   <script defer src="main.js"></script></head>
   <body>
-    <div id="hero">
-      <div id="terminal"></div>
-      <div id="header">
-        <div>
-          <h1>Shiva Tamil Kumaran</h1>
-        </div>
-        <div><a href="#content">[...]</a> </div>
+    <div id="page">
+
+      <div id="banner">
+        <div id="terminal"></div>
       </div>
-    </div>
 
-    <div id="content">
-      <p>
-        I'm a first year PhD student within the <a href="https://vtss.doc.ic.ac.uk/">Verified Software</a> research group
-        in the <a href="https://www.imperial.ac.uk/computing/">Department of Computing</a>
-        at <a href="https://www.imperial.ac.uk">Imperial College London</a>,
-        under the supervision of <a href="https://www.doc.ic.ac.uk/~pg/">Philippa Gardner</a> and
-        <a href="https://www.cs.rhul.ac.uk/home/upac096/">Andreas Lööw</a>.
-      </p>
-      <p>
-        I'm broadly interested in programming languages,
-        with a focus on formal verification and compositional symbolic execution tools.
-      </p>
+      <div id="layout">
 
-      <section>
-        <details><summary>Theses</summary>
+        <aside id="sidebar">
+          <h1>Shiva Tamil Kumaran</h1>
+
+          <nav>
+            <ul class="nav-list">
+              <li><a href="#theses">Theses</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#honours">Honours and Awards</a></li>
+              <li><a href="#teaching">Teaching</a></li>
+              <li><a href="#activities">Academic Activities</a></li>
+              <li><a href="#experience">Experience</a></li>
+            </ul>
+
+            <p class="nav-group">Elsewhere</p>
+            <ul class="nav-list">
+              <li><a href="https://github.com/shiva-tk">GitHub</a></li>
+              <li><a href="mailto:st621@ic.ac.uk">Email</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main id="content">
           <p>
-            <b>From State to Solver: Sound Encodings for Compositional Symbolic Execution</b> <br>
-            <em>Master's Thesis · Imperial College London · June 2025 · </em>
-            <span class="code">[<a href="/papers/masters-thesis.pdf">pdf</a>]</span> <br>
-            This project formalises how symbolic program states are encoded into
-            SMT queries in compositional symbolic execution tools,
-            proving the encoding sound for both over- and under-approximate reasoning.
-            It also extends the Gillian platform with support for user-defined
-            algebraic datatypes and functions, improving the expressiveness and performance of program verification.
-          </p>
-        </details>
-
-        <details><summary>Education</summary>
-          <p>
-            <b>PhD, Computing</b> <br>
-            <em> Imperial College London · October 2025 - Present</em>
+            I'm a first year PhD student within the <a href="https://vtss.doc.ic.ac.uk/">Verified Software</a> research group
+            in the <a href="https://www.imperial.ac.uk/computing/">Department of Computing</a>
+            at <a href="https://www.imperial.ac.uk">Imperial College London</a>,
+            under the supervision of <a href="https://www.doc.ic.ac.uk/~pg/">Philippa Gardner</a> and
+            <a href="https://www.cs.rhul.ac.uk/home/upac096/">Andreas Lööw</a>.
           </p>
           <p>
-            <b>MEng, Computing</b> <br>
-            <em> Imperial College London · October 2021 - June 2025</em> <br>
+            I'm broadly interested in programming languages,
+            with a focus on formal verification and compositional symbolic execution tools.
           </p>
-        </details>
 
-        <details> <summary>Honours and Awards</summary>
+          <hr>
+
+          <section id="theses">
+            <h2>Theses</h2>
+            <p>
+              <b>From State to Solver: Sound Encodings for Compositional Symbolic Execution</b> <br>
+              <em>Master's Thesis · Imperial College London · June 2025 · </em>
+              [<a href="/papers/masters-thesis.pdf">pdf</a>] <br>
+              This project formalises how symbolic program states are encoded into
+              SMT queries in compositional symbolic execution tools,
+              proving the encoding sound for both over- and under-approximate reasoning.
+              It also extends the Gillian platform with support for user-defined
+              algebraic datatypes and functions, improving the expressiveness and performance of program verification.
+            </p>
+          </section>
+
+          <hr>
+
+          <section id="education">
+            <h2>Education</h2>
+            <p>
+              <b>PhD, Computing</b> <br>
+              <em> Imperial College London · October 2025 - Present</em>
+            </p>
+            <p>
+              <b>MEng, Computing</b> <br>
+              <em> Imperial College London · October 2021 - June 2025</em> <br>
+            </p>
+          </section>
+
+          <hr>
+
+          <section id="honours">
+            <h2>Honours and Awards</h2>
             <p>
               <b>POPL Student Research Competition - First Place</b> <br>
               <em>Rennes, France · January 2026</em> <br>
@@ -74,46 +102,47 @@
               <br>
               Awarded for outstanding achievement in my Master’s thesis, which scored 87%, achieving <em>"Distinguished Project"</em> status.
             </p>
-        </details>
+          </section>
 
-        <details><summary>Teaching</summary>
-          <ul>
-            <li>
-              <a href="https://www.imperial.ac.uk/computing/current-students/courses/50003/"><b>50003 Models of Computation</b></a>
-              Spring 2026
+          <hr>
 
-            <li>
-              <a href="https://www.imperial.ac.uk/computing/current-students/courses/70023/"><b>70023 Scalable Software Verification (Separation Logic)</b></a>
-              Autumn 2025
-            <li> <a href="https://www.imperial.ac.uk/computing/current-students/courses/40018/"><b>40018 Discrete Maths, Logic & Reasoning</b></a>
-              Autumn 2023; Spring 2024
-          </ul>
-        </details>
+          <section id="teaching">
+            <h2>Teaching</h2>
+            <ul>
+              <li>
+                <a href="https://www.imperial.ac.uk/computing/current-students/courses/50003/"><b>50003 Models of Computation</b></a>
+                Spring 2026
+              <li>
+                <a href="https://www.imperial.ac.uk/computing/current-students/courses/70023/"><b>70023 Scalable Software Verification (Separation Logic)</b></a>
+                Autumn 2025
+              <li> <a href="https://www.imperial.ac.uk/computing/current-students/courses/40018/"><b>40018 Discrete Maths, Logic & Reasoning</b></a>
+                Autumn 2023; Spring 2024
+            </ul>
+          </section>
 
-        <details><summary>Academic Activities</summary>
-          <ul>
-            <li> <b>June - July 2026</b> ·
-              Attended the <a href="https://www.cs.uoregon.edu/research/summerschool/summer26/index.php">Oregon Programming Languages Summer School</a>
+          <hr>
 
-          </ul>
-        </details>
+          <section id="activities">
+            <h2>Academic Activities</h2>
+            <ul>
+              <li> <b>June - July 2026</b> ·
+                Attended the <a href="https://www.cs.uoregon.edu/research/summerschool/summer26/index.php">Oregon Programming Languages Summer School</a>
+            </ul>
+          </section>
 
-        <details> <summary>Experience</summary>
-          <p>
-            I've previously worked at a number of companies. Most recently, I was a
-            <a href="https://blog.palantir.com/dev-versus-delta-demystifying-engineering-roles-at-palantir-ad44c2a6e87">delta</a>
-            intern at Palantir, where I was working with clients across sectors. I focused on large-scale real world optimisation problems.
-          </p>
-        </details>
+          <hr>
 
-      </section>
+          <section id="experience">
+            <h2>Experience</h2>
+            <p>
+              I've previously worked at a number of companies. Most recently, I was a
+              <a href="https://blog.palantir.com/dev-versus-delta-demystifying-engineering-roles-at-palantir-ad44c2a6e87">delta</a>
+              intern at Palantir, where I was working with clients across sectors. I focused on large-scale real world optimisation problems.
+            </p>
+          </section>
+        </main>
 
-    <hr>
-    <p class="code">
-      st621 [at] ic.ac.uk |
-      <a href="https://github.com/shiva-tk">github</a>
-    </p>
+      </div>
     </div>
-    <script src="./index.js"></script>
   </body>
 </html>

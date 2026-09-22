@@ -13,67 +13,58 @@ export class Terminal {
     return this.terminalElement.offsetWidth
   }
 
-  get widthCharacters() {
-    // Get the terminal element
-    const terminal = document.getElementById("terminal");
-
-    if (!terminal) {
-        console.error("Terminal element not found.");
-        return null;
-    }
-
-    // Ensure the terminal spans the full page width
-    terminal.style.width = "100%";
-
-    // Get the computed style of the terminal
-    const style = window.getComputedStyle(terminal);
-
-    // Get the width of the terminal in pixels, accounting for box-sizing
-    const terminalWidth = terminal.clientWidth;
-
-    // Create a temporary span element to measure the width of a single character
-    const tempSpan = document.createElement("span");
-    tempSpan.textContent = "M"; // Use 'M' as it typically has a consistent width in monospaced fonts
-    tempSpan.style.fontFamily = style.fontFamily;
-    tempSpan.style.fontSize = style.fontSize;
-    tempSpan.style.visibility = "hidden"; // Make it invisible
-    tempSpan.style.position = "absolute"; // Avoid layout interference
-    document.body.appendChild(tempSpan);
-
-    // Get the width of the single character in pixels
-    const charWidth = tempSpan.offsetWidth;
-
-    // Remove the temporary span from the document
-    document.body.removeChild(tempSpan);
-
-    // Calculate the number of characters that fit in the terminal
-    const terminalWidthInChars = Math.floor(terminalWidth / charWidth);
-
-    return terminalWidthInChars;
-  }
-
   get heightPixels() {
     return this.terminalElement.offsetHeight;
   }
 
+  /* Width of one character cell, measured in the element's own font. The
+     weight matters: the terminal is set in bold, and bold Inconsolata is
+     wider than regular, so measuring without it overestimates how many
+     columns fit and the grid overflows. */
+  get cellWidth() {
+    const style = window.getComputedStyle(this.terminalElement);
+
+    const probe = document.createElement('span');
+    probe.textContent = 'M';
+    probe.style.font = style.font;
+    probe.style.fontFamily = style.fontFamily;
+    probe.style.fontSize = style.fontSize;
+    probe.style.fontWeight = style.fontWeight;
+    probe.style.letterSpacing = style.letterSpacing;
+    probe.style.whiteSpace = 'pre';
+    probe.style.visibility = 'hidden';
+    probe.style.position = 'absolute';
+
+    document.body.appendChild(probe);
+    const width = probe.getBoundingClientRect().width;
+    document.body.removeChild(probe);
+
+    return width;
+  }
+
+  /* Height of one character cell. This has to come from the element's
+     resolved line-height rather than a probe span's offsetHeight: the span
+     lays out at line-height `normal` regardless of what the terminal uses, so
+     any explicit line-height made the row count wrong and the grid stopped
+     short of filling its box. */
+  get cellHeight() {
+    const { lineHeight, fontSize } = window.getComputedStyle(this.terminalElement);
+
+    const resolved = parseFloat(lineHeight);
+    if (!Number.isNaN(resolved)) {
+      return resolved;
+    }
+
+    // line-height: normal doesn't resolve to a length, so approximate it.
+    return parseFloat(fontSize) * 1.2;
+  }
+
+  get widthCharacters() {
+    return Math.max(1, Math.floor(this.widthPixels / this.cellWidth));
+  }
+
   get heightCharacters() {
-    // Create a temporary span with a single line of text
-    const testSpan = document.createElement('span');
-    testSpan.textContent = 'W'; // A single character to measure line height
-    testSpan.style.fontFamily = getComputedStyle(this.terminalElement).fontFamily;
-    testSpan.style.fontSize = getComputedStyle(this.terminalElement).fontSize;
-    testSpan.style.visibility = 'hidden'; // Make it invisible
-
-    document.body.appendChild(testSpan);
-
-    // Get the line height of the character in pixels
-    const heightCharacters = testSpan.offsetHeight;
-
-    // Remove the test span
-    document.body.removeChild(testSpan);
-
-    // Calculate and return the terminal height in characters
-    return Math.floor(this.heightPixels / heightCharacters);
+    return Math.max(1, Math.floor(this.heightPixels / this.cellHeight));
   }
 
   print(text) {
