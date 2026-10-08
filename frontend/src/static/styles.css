@@ -163,12 +163,22 @@ hr {
    thing you read, which is what stops it overpowering the rest of the page. */
 #sidebar h1 {
     margin: 0 0 0.6em;
-    padding-bottom: 0.5em;
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 0;
     line-height: 1.25;
+}
+
+#profile {
+    margin: 0 0 0.6em;
+    padding-bottom: 0.8em;
     border-bottom: 1px solid #c6c7c7;
+}
+
+#profile img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .nav-group {
@@ -227,11 +237,18 @@ hr {
         width: auto;
         flex: none;
         margin-bottom: 2em;
+        text-align: center;
+    }
+
+    #profile img {
+        max-width: 140px;
+        margin: 0 auto;
     }
 
     .nav-list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 0.3em 1.3em;
     }
 
